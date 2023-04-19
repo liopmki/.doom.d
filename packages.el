@@ -50,7 +50,7 @@
 ;(unpin! t)
 
 (package! valign)
-;; (package! popup)
+(package! popup)
 
 ;; 自动切换输入法
 (package! sis)

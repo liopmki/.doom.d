@@ -32,7 +32,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+;; (setq doom-theme 'doom-one)
+(setq doom-theme 'doom-nova)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -85,13 +86,18 @@
 (add-hook 'org-mode-hook #'valign-mode)
 
 ;; 配置 pyim
-;(setq default-input-method "pyim")
+(setq default-input-method "pyim")
 ;; 显示候选词
-;(setq pyim-page-length 5)
-;(pyim-default-scheme 'xiaohe-shuangpin)
-;(setq pyim-page-tooltip 'popup)
+(setq pyim-page-length 5)
+(pyim-default-scheme 'xiaohe-shuangpin)
+(setq pyim-page-tooltip 'popup)
 ;(setq pyim-page-style 'one-line)
 ;; 中英文切换规则
 
 ;; 配置 sis
-(sis-ism-lazyman-config "1" "2" 'fcitx5)
+;; 使用效果不好 效果
+;;
+;;(use-package! sis
+;;  :config
+ ;; (sis-ism-lazyman-config "1" "2" 'fcitx5)
+ ;; )
