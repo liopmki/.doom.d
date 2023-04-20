@@ -86,18 +86,17 @@
 (add-hook 'org-mode-hook #'valign-mode)
 
 ;; 配置 pyim
-(setq default-input-method "pyim")
-;; 显示候选词
-(setq pyim-page-length 5)
-(pyim-default-scheme 'xiaohe-shuangpin)
-(setq pyim-page-tooltip 'popup)
+;; (setq default-input-method "pyim")
+;; ;; 显示候选词
+;; (setq pyim-page-length 5)
+;; (pyim-default-scheme 'xiaohe-shuangpin)
+;; (setq pyim-page-tooltip 'popup)
 ;(setq pyim-page-style 'one-line)
 ;; 中英文切换规则
 
 ;; 配置 sis
-;; 使用效果不好 效果
-;;
-;;(use-package! sis
-;;  :config
- ;; (sis-ism-lazyman-config "1" "2" 'fcitx5)
- ;; )
+(use-package! sis
+ :config
+ (sis-ism-lazyman-config "1" "2" 'fcitx5)
+ (sis-global-respect-mode t)
+ )
