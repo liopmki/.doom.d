@@ -1,0 +1,3 @@
+#+title: My Doom Emacs Config
+
+* My Doom Emacs Config
