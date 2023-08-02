@@ -3,10 +3,45 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; {{{ private config
+;; default encoding
+(prefer-coding-system 'utf-8)
+(setq-default buffer-file-coding-system 'utf-8)
+;; 默认最大化启动
+(setq default-frame-alist '((fullscreen . maximized)))
+;; 失去焦点自动保存
+(add-hook 'after-init-hook 'auto-save-visited-mode)
+;; Doom Emacs quit without confirm
+(setq confirm-kill-emacs nil)
+;; Org-Mode Begin
+;; Org-mode html-export config
+(setq
+ org-html-validation-link nil
+ org-html-head "<link href='C:\\Users\\Administrator\\OneDrive\\Profile\\orgcss\\org.css' rel='stylesheet'>"
+ org-html-head-include-default-style nil
+ org-export-with-sub-superscripts "^:{}")
+;; 设置 org mode 时间
+(setq system-time-locale "C")
+;(format-time-string "%Y-%m-%d %a")
+;; Org-Mode End
+;; private config end }}}
+
+;; {{{ Package Config
+(use-package! valign
+  :hook
+  (org-mode . valign-mode))
+
+(use-package! sis
+  :config
+  (sis-ism-lazyman-config nil t 'w32)
+  (sis-global-respect-mode t)
+  (sis-global-context-mode t)
+  (sis-global-inline-mode t))
+;; Package Config End }}}
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "oneYang"
+(setq user-full-name "Liopmki"
       user-mail-address "liuyiy4ng@outlook.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
@@ -29,20 +64,28 @@
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 
+;; (setq doom-font (font-spec :family "MesloLGM Nerd Font Mono" :size 18)
+;;       doom-variable-pitch-font (font-spec :family "LXGW Bright" :size 18)
+;;       doom-unicode-font (font-spec :family "LXGW WenKai Mono" :size 18)
+;;       doom-serif-font (font-spec :family "Microsoft YaHei" :size 18))
+(setq doom-font (font-spec :family "MesloLGM Nerd Font Mono" :size 22) ;; default font
+      doom-variable-pitch-font (font-spec :family "MesloLGM Nerd Font Mono" :size 22) ;; non mono font
+      doom-unicode-font (font-spec :family "LXGW WenKai Screen R") ;; unicode font
+      doom-serif-font (font-spec :family "MesloLGM Nerd Font Mono" :size 22)) ;; serif font
+
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-;; (setq doom-theme 'doom-one)
-(setq doom-theme 'doom-nova)
+(setq doom-theme 'doom-one-light)
+;; (setq doom-theme 'doom-dracula)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-;; (setq display-line-numbers-type t)
-(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type t)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "C:/Users/Administratorr/OneDrive/Project/notes/org")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -77,26 +120,3 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-
-;; my config
-;; 配置 scroll-margin ， 类似 vim 中的 scrolloff
-(setq scroll-conservatively 101 scroll-margin 8)
-
-;; valign 配置 表格自动对齐
-(add-hook 'org-mode-hook #'valign-mode)
-
-;; 配置 pyim
-;; (setq default-input-method "pyim")
-;; ;; 显示候选词
-;; (setq pyim-page-length 5)
-;; (pyim-default-scheme 'xiaohe-shuangpin)
-;; (setq pyim-page-tooltip 'popup)
-;(setq pyim-page-style 'one-line)
-;; 中英文切换规则
-
-;; 配置 sis
-(use-package! sis
- :config
- (sis-ism-lazyman-config "1" "2" 'fcitx5)
- (sis-global-respect-mode t)
- )
