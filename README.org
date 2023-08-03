@@ -1,1 +1,10 @@
 #+title: My Doom Emacs Config
+#+author: Liopmki
+
+* Doom Emacs 的字体配置
+
+- =doom-font= 默认字体、等宽字体
+- =doom-variable-pitch-font= 非等宽字体
+- =doom-big-font= big-mode 下的字体，默认使用 =doom-font=
+- =doom-unicode-font= unicode 和中文字体（中文字体以 unicode 的形式显示在 Emacs 中），这个字体不用设置大小
+- =doom-serif-font= 衬线字体

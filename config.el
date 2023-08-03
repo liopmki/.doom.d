@@ -9,8 +9,8 @@
 (setq-default buffer-file-coding-system 'utf-8)
 ;; 默认最大化启动
 (setq default-frame-alist '((fullscreen . maximized)))
-;; 失去焦点自动保存
-(add-hook 'after-init-hook 'auto-save-visited-mode)
+;; 自动保存
+;; (add-hook 'after-init-hook 'auto-save-visited-mode)
 ;; Doom Emacs quit without confirm
 (setq confirm-kill-emacs nil)
 ;; Org-Mode Begin
@@ -38,7 +38,8 @@
   (sis-ism-lazyman-config nil t 'w32)
   (sis-global-respect-mode t)
   (sis-global-context-mode t)
-  (sis-global-inline-mode t))
+  ;; (sis-global-inline-mode t)
+  )
 ;; Package Config End }}}
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
