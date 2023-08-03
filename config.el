@@ -22,8 +22,10 @@
  org-export-with-sub-superscripts "^:{}")
 ;; 设置 org mode 时间
 (setq system-time-locale "C")
-;(format-time-string "%Y-%m-%d %a")
+;;(format-time-string "%Y-%m-%d %a")
 ;; Org-Mode End
+;; set scrolloff = 8
+(setq scroll-conservatively 101 scroll-margin 8)
 ;; private config end }}}
 
 ;; {{{ Package Config
