@@ -7,7 +7,7 @@
 ;; default encoding
 (prefer-coding-system 'utf-8)
 (setq-default buffer-file-coding-system 'utf-8)
-;; 默认最大化启动
+;; 默认最大化窗口启动
 (setq default-frame-alist '((fullscreen . maximized)))
 ;; 自动保存
 ;; (add-hook 'after-init-hook 'auto-save-visited-mode)
